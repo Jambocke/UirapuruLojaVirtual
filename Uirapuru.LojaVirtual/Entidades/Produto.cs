@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Uirapuru.LojaVirtual.Entidades
 {
-    class Produto
+    public class Produto
     {
         public int ProdutoId { get; set; }
         public string Nome { get; set; }
