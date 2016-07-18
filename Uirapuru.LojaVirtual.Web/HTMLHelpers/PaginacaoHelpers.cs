@@ -13,7 +13,7 @@ namespace Uirapuru.LojaVirtual.Web.HTMLHelpers
         {
             StringBuilder resultado = new StringBuilder();
 
-            for (int i = 0; i < paginacao.totalPagina; i++)
+            for (int i = 1; i <= paginacao.totalPagina; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
                 tag.MergeAttribute("href", paginarUrl(i));
