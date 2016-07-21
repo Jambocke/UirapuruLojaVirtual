@@ -9,7 +9,7 @@ namespace Uirapuru.LojaVirtual.Web.HTMLHelpers
 {
     public static class PaginacaoHelpers
     {
-        public static  MvcHtmlString PageLinks(this HtmlHelper html, Paginacao paginacao, Func<int, string> paginarUrl)
+        public static  MvcHtmlString GerarLinksPaginacao(this HtmlHelper html, Paginacao paginacao, Func<int, string> paginarUrl)
         {
             StringBuilder resultado = new StringBuilder();
 

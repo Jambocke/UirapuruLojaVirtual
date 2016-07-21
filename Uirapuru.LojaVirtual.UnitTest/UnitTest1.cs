@@ -24,7 +24,7 @@ namespace Uirapuru.LojaVirtual.UnitTest
             Func<int, string> paginarUrl = i => "Pagina" + i;
 
             //Act
-            System.Web.Mvc.MvcHtmlString resultado = html.PageLinks(paginacao, paginarUrl);
+            System.Web.Mvc.MvcHtmlString resultado = html.GerarLinksPaginacao(paginacao, paginarUrl);
 
 
             //Assert

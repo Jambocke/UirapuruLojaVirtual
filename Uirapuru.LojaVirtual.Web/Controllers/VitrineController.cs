@@ -17,13 +17,22 @@ namespace Uirapuru.LojaVirtual.Web.Controllers
         {
             Repositorio = new ProdutosRepositorio();
 
-            var Produtos = from r in Repositorio.Produtos
-                           .OrderBy(p => p.Descricao)
-                           .Skip((pagina - 1) * produtosPorPagina)
-                           .Take(produtosPorPagina)
-                           select r;
-                
-            return View(Produtos);
+            Uirapuru.LojaVirtual.Web.Models.ProdutosViewModel model = new Uirapuru.LojaVirtual.Web.Models.ProdutosViewModel()
+            {
+
+                Produtos = this.Repositorio.Produtos
+                    .OrderBy(p => p.Descricao)
+                    .Skip((pagina - 1) * produtosPorPagina)
+                    .Take(produtosPorPagina),
+
+                Paginacao = new Models.Paginacao
+                {
+                    pagAtual = pagina,
+                    itensPorPagina = produtosPorPagina,
+                    itensTotal = this.Repositorio.Produtos.Count()
+                }
+            };
+            return View(model);
         }
     }
 }
